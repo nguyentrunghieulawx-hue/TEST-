@@ -62,25 +62,6 @@ a {
     color: var(--teal);
 }
 
-.cm-nav-link {
-    display: block;
-    padding: 8px 14px;
-    border-radius: 10px;
-    color: #3D5A50;
-    font-weight: 600;
-    font-size: 15px;
-}
-
-.cm-nav-link:hover {
-    background: #EAF4EF;
-    color: var(--blue);
-}
-
-.cm-nav-link.active {
-    background: linear-gradient(100deg, var(--blue), var(--teal));
-    color: #fff;
-}
-
 .cm-icon-btn {
     width: 42px;
     height: 42px;
@@ -170,6 +151,7 @@ a {
     color: var(--blue);
     margin: 0;
 }
+
 
 /* ======= KHU GIỚI THIỆU TRANG CHỦ ======= */
 
@@ -264,6 +246,58 @@ a {
     color: #fff;
 }
 
+/* ======= AI TRANG CHỦ: ô hỏi nhanh, nhận định, thẻ gợi ý ======= */
+
+.cm-ai-search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    max-width: 620px;
+    margin-top: 22px;
+    padding: 6px 6px 6px 16px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, .10);
+}
+
+.cm-ai-search > i {
+    color: #FFC080;
+}
+
+.cm-ai-search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: #fff;
+    font-size: 15px;
+}
+
+.cm-ai-search input::placeholder {
+    color: #B9DBCE;
+}
+
+.cm-ai-nhan-dinh {
+    max-width: 620px;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-left: 3px solid #FFC080;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .07);
+}
+
+#oTheGoiY {
+    cursor: pointer;
+    transition: transform .18s ease, background .18s ease;
+}
+
+#oTheGoiY:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, .13);
+}
+
+
 /* ======= GIÁ TIỀN VÀ ĐIỂM AI ======= */
 
 .cm-price {
@@ -273,21 +307,6 @@ a {
     color: var(--blue);
 }
 
-.cm-toast {
-    position: fixed;
-    right: 22px;
-    bottom: 22px;
-    z-index: 1080;
-    max-width: 360px;
-    padding: 13px 18px;
-    border-radius: 12px;
-    color: #fff;
-    background: var(--blue-dark);
-    box-shadow: 0 12px 34px rgba(13, 47, 38, .20);
-    transform: translateY(130px);
-    opacity: 0;
-    transition: .25s ease;
-}
 
 /*CHÂN TRANG*/
 
@@ -298,6 +317,7 @@ a {
     font-size: 14px;
     margin-top: 40px;
 }
+
 
 /*MÀN HÌNH NHỎ*/
 
@@ -310,7 +330,6 @@ a {
         padding: 52px 6vw;
         gap: 30px;
     }
-
 }
 
 @media (max-width: 575.98px) {
@@ -318,13 +337,6 @@ a {
         padding: 18px 15px;
         border-radius: 16px;
     }
-
-    .cm-toast {
-        left: 16px;
-        right: 16px;
-        max-width: none;
-    }
-
     .cm-hero {
         padding: 44px 6vw;
     }

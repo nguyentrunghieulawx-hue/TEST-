@@ -29,7 +29,6 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="cmMenu">
-                    <ul class="navbar-nav ms-lg-auto mb-3 mb-lg-0 gap-lg-1" id="cmNav"></ul>
                     <div class="d-flex align-items-center gap-2 ms-lg-3">
                         <a class="cm-icon-btn" href="../DAI/notifications.html" title="Thông báo">3</a>
                         <a class="cm-icon-btn cm-avatar" href="../DAI/profile.html" title="Hồ sơ">HA</a>
@@ -54,36 +53,45 @@
                 </a>
             </div>
 
+            <!-- Ô hỏi nhanh AI: gõ câu tự nhiên, AI tách điểm đi / điểm đến / ngày / giờ / số chỗ -->
+            <form class="cm-ai-search" id="oHoiNhanh" onsubmit="return false">
+                <i class="bi bi-stars"></i>
+                <input type="text" id="oCauHoi" placeholder="VD: Mai 7h đi từ Cầu Giấy lên Hòa Lạc" aria-label="Hỏi nhanh AI">
+                <button type="submit" class="btn cm-btn cm-btn-light">Tìm <i class="bi bi-arrow-right"></i></button>
+            </form>
+            <div class="cm-hero-note mt-2" id="oAiHieu">AI tự hiểu điểm đi, điểm đến, ngày, giờ và số chỗ trong câu của bạn.</div>
+
             <div class="row g-3 mt-2">
-                <div class="col-4 cm-hero-stat"><strong>2.480+</strong>
+                <div class="col-4 cm-hero-stat"><strong id="oTkNguoiDung">2.480+</strong>
                     <div class="cm-hero-note">người tham gia</div>
                 </div>
-                <div class="col-4 cm-hero-stat"><strong>1.260</strong>
+                <div class="col-4 cm-hero-stat"><strong id="oTkChuyen">1.260</strong>
                     <div class="cm-hero-note">chuyến đã ghép</div>
                 </div>
-                <div class="col-4 cm-hero-stat"><strong>4,8/5</strong>
+                <div class="col-4 cm-hero-stat"><strong id="oTkDiem">4,8/5</strong>
                     <div class="cm-hero-note">điểm hài lòng</div>
                 </div>
             </div>
+            <div class="cm-hero-note cm-ai-nhan-dinh d-none" id="oNhanDinhAi"></div>
         </div>
 
-        <div class="cm-hero-card">
+        <div class="cm-hero-card" id="oTheGoiY" title="Xem các chuyến phù hợp">
             <div class="cm-hero-mini mb-2">Chuyến gợi ý gần bạn</div>
             <div class="cm-route">
                 <span class="cm-route-dot"></span>
-                <div><strong>Cầu Giấy</strong>
-                    <div class="cm-hero-note">07:15 · Điểm đón cách 350m</div>
+                <div><strong id="oGyDi">Cầu Giấy</strong>
+                    <div class="cm-hero-note" id="oGyDiNote">07:15 · Điểm đón cách 350m</div>
                 </div>
             </div>
             <div class="cm-route">
                 <span class="cm-route-dot cm-den"></span>
-                <div><strong>Khu CNC Hòa Lạc</strong>
-                    <div class="cm-hero-note">Dự kiến 08:05</div>
+                <div><strong id="oGyDen">Khu CNC Hòa Lạc</strong>
+                    <div class="cm-hero-note" id="oGyDenNote">Dự kiến 08:05</div>
                 </div>
             </div>
             <div class="cm-route-total">
-                <span class="cm-hero-note"><i class="bi bi-stars"></i> AI phù hợp 96%</span>
-                <strong class="cm-price text-white">35.000đ</strong>
+                <span class="cm-hero-note"><i class="bi bi-stars"></i> AI phù hợp <span id="oGyDiem">96</span>%</span>
+                <strong class="cm-price text-white" id="oGyGia">35.000đ</strong>
             </div>
         </div>
     </section>
@@ -120,8 +128,6 @@
             <p class="mb-0 mt-1">© 2026 CommuteMatch — Ghép chuyến đi chung cho cộng đồng.</p>
         </div>
     </footer>
-
-    <div class="cm-toast" id="cmToast">Đã cập nhật thành công</div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/duong-dan.js"></script>
